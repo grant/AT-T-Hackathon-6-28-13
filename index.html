@@ -5,17 +5,7 @@
   <link rel="stylesheet" href="lib/jquery.mobile-1.0.1.css" />
   <script src="lib/jquery-1.7.1.js"></script>
   <script src="lib/jquery.mobile-1.0.1.js"></script>
-  <script src="lib/persistence.js"></script>
-  <script src="lib/persistence.store.sql.js"></script>
-  <script src="lib/persistence.store.websql.js"></script>
-  <script src="lib/persistence.extends.js"></script>
-  <script src="lib/skeleton_helper.js"></script>
-  <script src="seed.js"></script>
   <script src="app.js"></script>
-  <script>
-     // setup is defined in app.js
-     setup({name: "Fruit App", seed: data, mode: "development"});
-  </script>
 </head>
 <body>
 
@@ -24,8 +14,8 @@
     <h1 class="app_title"></h1>
   </div>
   <div data-role="content">  
-    <a class="list_fruit_button" data-role="button">List Fruit</a>
-    <a class="list_colors_button" data-role="button">List Colors</a>
+    <a href="#list_fruit_button" data-role="button">List Fruit</a>
+    <a href="#list_colors_button" data-role="button">List Colors</a>
   </div>
 </div>
 
