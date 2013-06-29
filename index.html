@@ -3,51 +3,60 @@
   <title></title> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="stylesheet" href="lib/jquery.mobile-1.0.1.css" />
-  <script src="lib/jquery-1.7.1.js"></script>
-  <script src="lib/jquery.mobile-1.0.1.js"></script>
-  <script src="app.js"></script>
+  <link rel="stylesheet" href="lib/styles/style.css">
 </head>
 <body>
 
 <div data-role="page" id="home_page">
   <div data-role="header">
-    <h1 class="app_title"></h1>
+    <!-- <h1 class="app_title"></h1> -->
+    <div class="frontPage">
+      <div class="frontPageNav">
+        <div class="navButtons">
+          <a href="#signin"><span class="signin">sign in</span></a>
+          <span class="login">sign up</span>
+        </div>
+      </div>
+      <img id="frontPageImage" src="lib/images/teacher.jpg" alt="" />
+    </div>
   </div>
   <div data-role="content">  
-    <a href="#list_fruit_button" data-role="button">List Fruit</a>
-    <a href="#list_colors_button" data-role="button">List Colors</a>
+<!--     <a href="#signin" data-role="button">List Fruit</a>
+    <a href="#list_colors_page" data-role="button">List Colors</a>
+ -->  </div>
+</div>
+
+<div data-role="page" id="signin">
+  <div data-role="header">
+    <div class="mapPageNav">
+      <div class="mapButtons">
+        <a href="#profile">
+          <img src="lib/images/profile.jpg" alt="" />
+        </a>
+      </div>
+    </div>
+    <img id="mapPageImage" src="lib/images/teacher.jpg" alt="" />
+    <!-- <a href="#home_page" data-direction="reverse" data-icon="home">Home</a> -->
+    <!-- <h1 class="fruit_list_title">Map</h1> -->
+  </div>
+  <div data-role="content">
+    <ul data-role="listview" class="locationList"></ul>
   </div>
 </div>
 
-<div data-role="page" id="list_fruit_page">
+<div data-role="page" id="proile">
   <div data-role="header">
     <a href="#home_page" data-direction="reverse" data-icon="home">Home</a>
     <h1 class="fruit_list_title">Fruit</h1>
   </div>
   <div data-role="content">
-    <ul data-role="listview" class="fruit_list"></ul>
+    hi
   </div>
 </div>
 
-<div data-role="page" id="list_colors_page">
-  <div data-role="header">
-    <a href="#home_page" data-direction="reverse" data-icon="home">Home</a>
-    <h1>Colors</h1>
-  </div>
-  <div data-role="content">
-    <ul data-role="listview" class="color_list"></ul>
-  </div>
-</div>
-
-<div data-role="page" id="show_fruit_page">
-  <div data-role="header" data-add-back-btn="true">
-    <a data-icon="arrow-l" data-rel="back">Back</a>
-    <h1 class="fruit_title"></h1>
-  </div>
-  <div data-role="content">
-    The color of a <span class="fruit_name"></span> is <b><span class="fruit_color"></span></b>.
-  </div>
-</div>
-
+  <!-- Scripts -->
+  <script src="lib/jquery-1.7.1.js"></script>
+  <script src="lib/jquery.mobile-1.0.1.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
