@@ -12,30 +12,44 @@
     <!-- <h1 class="app_title"></h1> -->
     <div class="frontPage">
       <div class="frontPageNav">
+        <img class="logo" src="lib/images/logo.png" alt="" style="position:absolute;">
         <div class="navButtons">
-          <a href="#signin"><span class="signin">sign in</span></a>
+          <a href="#map"><span class="signin">sign in</span></a>
           <span class="login">sign up</span>
         </div>
       </div>
       <img id="frontPageImage" src="lib/images/teacher.jpg" alt="" />
     </div>
   </div>
-  <div data-role="content">  
-<!--     <a href="#signin" data-role="button">List Fruit</a>
-    <a href="#list_colors_page" data-role="button">List Colors</a>
- -->  </div>
+  <div data-role="content">
+    <div class="intro">
+      <h1>SNU -- Schools Need U!</h1>
+      <h4>Matching volunteers with schools that need their help.</h4>
+      <h4>With SNU, you can:</h4>
+      <ul>
+        <li>Match your availability to opportunities at a school near you</li>
+        <li>Pick based on your special skills, or just a desire to help</li>
+        <li>Track your hours and earn points and kudos</li>
+        <li>Earn kudos faster for volunteering at those schools that need help most</li>
+        <li>Automatically submit for corporate matching at participating companies</li>
+        <li>Share your enthusiasm for volunteering</li>
+        <li>Let your friends know how to get involved too</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div data-role="page" id="signin">
+<div data-role="page" id="map">
   <div data-role="header">
     <div class="mapPageNav">
       <div class="mapButtons">
         <a href="#profile">
-          <img src="lib/images/profile.jpg" alt="" />
+          <img class="mapButtonImg" src="lib/images/profile.png" alt="" />
         </a>
       </div>
     </div>
-    <img id="mapPageImage" src="lib/images/teacher.jpg" alt="" />
+    <div id="googleMap"></div>
+    <div class="mapResults"><div class="resultsCircle"><span class="number"></span><br><span class="results">Results</span></div></div>
     <!-- <a href="#home_page" data-direction="reverse" data-icon="home">Home</a> -->
     <!-- <h1 class="fruit_list_title">Map</h1> -->
   </div>
@@ -44,17 +58,54 @@
   </div>
 </div>
 
-<div data-role="page" id="proile">
+<div data-role="page" id="profile">
   <div data-role="header">
-    <a href="#home_page" data-direction="reverse" data-icon="home">Home</a>
-    <h1 class="fruit_list_title">Fruit</h1>
+    <div class="profilePageNav">
+      <div class="profileButtons">
+        <div class="profileTitle">profile</div>
+        <a style="position:absolute;top:0;" href="#map" data-direction="reverse"><img class="logo" src="lib/images/logo.png" alt=""></a>
+      </div>
+    </div>
+    <img id="profilePageImage" src="lib/images/water.jpg" alt="" />
+    <div class="personArea">
+      <img class="profilePic" src="lib/images/profilePic.png" alt="">
+      <div class="personText">
+        <span class="personName">Ken Pumpum</span>
+        <br>
+        <span class="personLocation">Seattle, WA</span>
+      </div>
+    </div>
   </div>
-  <div data-role="content">
-    hi
+  <div data-role="content" style="background-color:#fff">
+    <div class="personTop">
+      <div class="left">
+        <span class="hourNum">10</span>
+        <br>
+        <span class="hours">Hours</span>
+      </div>
+      <div class="right">
+        <img class="ducky" src="lib/images/ducky.png" alt="">
+        <br>
+        <span class="level">Level 1</span>
+        <br>
+        <span class="points">1000 Points</span>
+      </div>
+    </div>
+    <div class="personBottom">
+      <div class="li">
+        <img src="lib/images/message.png" alt="" style="width:30px" />
+        <span class="alert">You have 11 new messages!</span>
+      </div>
+      <div class="li">
+        <img src="lib/images/SkillSetting.png" alt="" style="width:25px" />
+        <span class="settings">List Skills</span>
+      </div>
+    </div>
   </div>
 </div>
 
   <!-- Scripts -->
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
   <script src="lib/jquery-1.7.1.js"></script>
   <script src="lib/jquery.mobile-1.0.1.js"></script>
   <script src="app.js"></script>

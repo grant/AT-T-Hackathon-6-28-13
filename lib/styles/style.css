@@ -2,6 +2,11 @@ a {
 	text-decoration: none !important;
 }
 
+.logo {
+	width: 40px;
+	padding: 10px;
+}
+
 /* Front page */
 
 .frontPage {
@@ -43,6 +48,11 @@ a {
 	color: #333;
 }
 
+.intro {
+	color: #555;
+	font-weight: 100;
+}
+
 /* Map page */
 
 .mapPageNav {
@@ -52,6 +62,7 @@ a {
 	height: 50px;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0.8);	
+	z-index: 9999;
 }
 
 #mapPageImage {
@@ -60,10 +71,47 @@ a {
 }
 
 .mapButtons {
-	margin: 2px;
+	margin: 10px;
+	margin-right: -10px;
 	display: table;
 	position: absolute;
 	right: 0;
+}
+
+#googleMap {
+	width: 100%;
+	height: 400px;
+}
+
+.mapResults {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.resultsCircle {
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+    behavior: url(PIE.htc);
+
+	float: left;
+	
+    width: 40px;
+    height: 40px;
+    padding: 8px 8px 8px 8px;
+    
+    background: rgba(106, 126, 165, .5);
+    color: #fff;
+    text-align: center;
+    
+    font-weight: 100;
+}
+.resultsCircle .number {
+	font-size: 25px;
+}
+.resultsCircle span {
+	font-size: 8px;
 }
 
 .numberCircle {
@@ -93,7 +141,7 @@ a {
 	border: 0;
 	border-bottom: 1px solid #DDD;
 	overflow: hidden;
-	padding: 10px;
+	padding: 10px 10px 0 10px;
 }
 
 .locationFirstRow {
@@ -121,10 +169,125 @@ a {
 
 .locationSecondRow p {
 	white-space: normal;
-	height: 40px;
+	height: 42px;
 
 	font-size: 12px;
 	font-weight: 100;
 	color: #555;
 	overflow: hidden;
+}
+
+/* Profile page */
+
+.profilePageNav {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.8);	
+}
+
+#profilePageImage {
+	width: 100%;
+	height: auto;
+}
+
+.profileButtons {
+	width: 100%;
+	margin: auto;
+	display: table;
+	position: absolute;
+}
+.profileTitle {
+	padding-top: 5px;
+	text-align: center;
+	margin: auto;
+
+	color: #555;
+	font-size: 30px;
+	text-shadow:none;
+	font-weight: 100;
+}
+
+.personArea {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	vertical-align: top;
+}
+
+.personText {
+	float: left;
+	line-height: 1.5;
+	padding: 20px;
+}
+.personName {
+	font-size: 24px;
+}
+.personLocation {
+	font-size: 16px;
+	font-weight: 100;
+}
+
+.profilePic {
+	float: left;
+	width: 100px;
+	height: 100px;
+}
+
+.left, .right {
+	color: #555;
+	text-align: center;
+}
+.left {
+	padding-top: 10px;
+	float: left;
+	width: 49%;
+}
+.right {
+	border-left: 1px solid #999;
+	float: right;
+	width: 49%;
+}
+
+.hourNum {
+	font-size: 40px;
+	font-weight: bold;
+}
+.hours {
+	font-size: 20px;
+}
+
+.ducky {
+	width: 70px;
+}
+.level {
+	font-size: 16px;
+}
+.points {
+	font-size: 20px;
+}
+
+.personBottom {
+	/* Hack */
+	padding-top: 130px;
+}
+
+.li {
+	padding: 10px;
+	border-top: 1px solid #999;
+}
+
+.alert, .settings {
+	padding-left: 10px;
+	font-size: 20px;	
+}
+.alert {
+	color: #ff0000;
+	vertical-align: top;
+}
+.settings {
+	vertical-align: top;
+	color: #555;
 }
