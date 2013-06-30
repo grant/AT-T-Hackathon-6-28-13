@@ -78,6 +78,10 @@ a {
 	right: 0;
 }
 
+.mapButtonImg {
+	width: 60%;
+}
+
 #googleMap {
 	width: 100%;
 	height: 400px;
@@ -290,4 +294,20 @@ a {
 .settings {
 	vertical-align: top;
 	color: #555;
+}
+
+/* Profile skills */
+.skills {
+	color: rgb(121, 142, 180);
+	padding-bottom: 10px;
+	font-size: 20px;
+}
+
+.sliderWrapper {
+	float: right;
+}
+
+.skillTitle {
+	color: #555;
+	font-size: 20px;
 }

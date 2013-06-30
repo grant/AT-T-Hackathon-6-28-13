@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <link rel="stylesheet" href="lib/jquery.mobile-1.0.1.css" />
   <link rel="stylesheet" href="lib/styles/style.css">
+  <link rel="stylesheet" href="lib/styles/toggleswitch.css">
 </head>
 <body>
 
@@ -42,6 +43,7 @@
 <div data-role="page" id="map">
   <div data-role="header">
     <div class="mapPageNav">
+      <a style="position:absolute;top:0;left:0;" href="#home_page" data-direction="reverse"><img class="logo" src="lib/images/logo.png" alt=""></a>
       <div class="mapButtons">
         <a href="#profile">
           <img class="mapButtonImg" src="lib/images/profile.png" alt="" />
@@ -55,6 +57,13 @@
   </div>
   <div data-role="content">
     <ul data-role="listview" class="locationList"></ul>
+
+
+  <!-- Facebook link -->
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fyahoo.com" target="_blank">
+  <img src="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQDwOWUQQK7S2SVC&url=https%3A%2F%2Ffbstatic-a.akamaihd.net%2Frsrc.php%2Fv2%2Fy3%2Fr%2FRmXu3PJnGyT.gif">
+</a>
+
   </div>
 </div>
 
@@ -96,10 +105,38 @@
         <img src="lib/images/message.png" alt="" style="width:30px" />
         <span class="alert">You have 11 new messages!</span>
       </div>
-      <div class="li">
-        <img src="lib/images/SkillSetting.png" alt="" style="width:25px" />
-        <span class="settings">List Skills</span>
+      <a href="#profileSkills">
+        <div class="li">
+          <img src="lib/images/SkillSetting.png" alt="" style="width:25px" />
+          <span class="settings">List Skills</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div data-role="page" id="profileSkills">
+  <div data-role="header">
+    <div class="profilePageNav">
+      <div class="profileButtons">
+        <div class="profileTitle">profile</div>
+        <a onclick="filter()" style="position:absolute;top:0;" href="#profile" data-direction="reverse"><img class="logo" src="lib/images/logo.png" alt=""></a>
       </div>
+    </div>
+    <img id="profilePageImage" src="lib/images/water.jpg" alt="" />
+    <div class="personArea">
+      <img class="profilePic" src="lib/images/profilePic.png" alt="">
+      <div class="personText">
+        <span class="personName">Ken Pumpum</span>
+        <br>
+        <span class="personLocation">Seattle, WA</span>
+      </div>
+    </div>
+  </div>
+  <div data-role="content" style="background-color:#fff">
+    <div class="personTop">
+      <div class="skills">Skills</div>
+      <div class="skillUL"></div>
     </div>
   </div>
 </div>
@@ -109,5 +146,6 @@
   <script src="lib/jquery-1.7.1.js"></script>
   <script src="lib/jquery.mobile-1.0.1.js"></script>
   <script src="app.js"></script>
+  <script src="jquery.toggleswitch.min.js"></script>
 </body>
 </html>
