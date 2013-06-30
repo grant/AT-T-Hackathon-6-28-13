@@ -39,17 +39,13 @@ $(function() {
         '<div class="locationSecondRow">' +
           '<p>'+schoolData.Description+'</p>' +
         '</div>' +
+        '<div class="social"></div>' +
       '</li>';
     $ul.append(li);
 
     // Results circle
     $('.resultsCircle').find('.number').html(schoolKeys.length);
   }
-
-  // Location List
-  $('.locationList li').click(function(e) {
-    $(e.currentTarget).addClass('selected');
-  });
 });
 
 // 
@@ -70,6 +66,10 @@ $(function() {
     };
 
   map = new google.maps.Map(document.getElementById('googleMap'),mapOptions);
+  $('#map').on('pageshow', function() {
+      google.maps.event.trigger(map, 'resize'); // cause the map to refresh itself
+      map.panTo(mapOptions.center);                   // make sure it centers on the marker
+    });
 
   // the for loop drawing all points
   for (var i = 0; i < schoolKeys.length; ++i) {
@@ -122,18 +122,15 @@ function filter() {
     // make new map
 
     markers = [];
-    for(var i=0;i<10;i++){
+    for (var i = 4; i < schoolKeys.length-1; ++i) {
 
     // how I set up
-        var item = new google.maps.LatLng(-10*i, -10*i);
-        markers.push(item);
+        var schoolName = schoolKeys[i];
+        var schoolData = schools[schoolName];
+        var lat = schoolData.lat;
+        var lng = schoolData.lng;
 
-        marker = new google.maps.Marker({
-            position: item,
-            title:"Hello World" + i+" !"
-        });
-
-        marker.setMap(map);
+        setupGeo(lat, lng);
     }
 
     // List results
@@ -153,10 +150,24 @@ function filter() {
         '<div class="locationSecondRow">' +
           '<p>'+schoolData.Description+'</p>' +
         '</div>' +
+        '<div class="social"></div>' +
       '</li>';
     $ul.append(li);
 
-    // Results circle
-    $('.resultsCircle').find('.number').html(3);
   }
+  // Results circle
+  $('.resultsCircle').find('.number').html(3);
+
+  // Location List
+  $('.locationList li .locationFirstRow').click(function(e) {
+    var node = e.currentTarget.parentNode;
+    $(node).addClass('selected');
+    var socialHTML = '<img style="height:20px" src="lib/images/twitter.png" alt="">&nbsp;&nbsp;'+
+    '<img style="height:20px" src="lib/images/linkedin.png" alt="">&nbsp;&nbsp;'+
+    '<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvolunteermatch.org" target="_blank">' +
+  '<img style="height:20px" src="https://fbexternal-a.akamaihd.net/safe_image.php?d=AQDwOWUQQK7S2SVC&url=https%3A%2F%2Ffbstatic-a.akamaihd.net%2Frsrc.php%2Fv2%2Fy3%2Fr%2FRmXu3PJnGyT.gif">' +
+'</a>';
+    $(node).find('.social').html(socialHTML);
+    alert("Thanks for volunteering. You're signed up!");
+  });
 }

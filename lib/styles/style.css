@@ -137,6 +137,12 @@ a {
     font-size: 20px;
     font-weight: 100;
 }
+li.selected .numberCircle {
+	background: rgb(11, 218, 81);
+}
+.social {
+	margin-bottom: 10px;
+}
 
 /* Location first row */
 
@@ -146,10 +152,6 @@ a {
 	border-bottom: 1px solid #DDD;
 	overflow: hidden;
 	padding: 10px 10px 0 10px;
-}
-
-.locationList li.selected {
-	background: rgb(11, 218, 81);
 }
 
 .locationFirstRow {
