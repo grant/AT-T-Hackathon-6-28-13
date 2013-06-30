@@ -148,6 +148,10 @@ a {
 	padding: 10px 10px 0 10px;
 }
 
+.locationList li.selected {
+	background: rgb(11, 218, 81);
+}
+
 .locationFirstRow {
 	margin: 0 10px 10px 0;
 }
